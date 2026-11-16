@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finding Mr. Gomez</title>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+<style>
+body { margin: 0; background: #1a1a2e; font-family: Arial, sans-serif; color: white; }
+#menu { text-align: center; padding: 40px; }
+#menu h1 { font-size: 3em; color: #ffd700; }
+button { font-size: 1.2em; padding: 10px 20px; margin: 10px; background: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; }
+button:hover { background: #45a049; }
+input, select { font-size: 1em; padding: 8px; margin: 5px; }
+#game-container { display: none; }
+#notebook { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); padding: 10px; border: 2px solid gold; max-width: 300px; display: none; }
+.dialog { background: white; color: black; padding: 20px; border-radius: 10px; max-width: 500px; margin: 20px auto; }
+</style>
+</head>
+<body>
+<div id="menu">
+  <h1>FINDING MR. GOMEZ</h1>
+  <p>English Detective Adventure for ELL Students</p>
+  <input type="text" id="studentName" placeholder="Full Name" required>
+  <select id="period">
+    <option value="1">Period 1</option>
+    <option value="3">Period 3</option>
+  </select>
+  <br>
+  <label>Skin Tone:</label>
+  <select id="skin">
+    <option value="0xFFDBAC">Light</option>
+    <option value="0xF1C27D">Medium Light</option>
+    <option value="0xE0AC69">Medium</option>
+    <option value="0xC68642">Medium Dark</option>
+    <option value="0x8D5524">Dark</option>
+    <option value="0x5C3317">Very Dark</option>
+  </select>
+  <br>
+  <button onclick="startGame()">START ADVENTURE</button>
+<!-- Teacher views results in the private Google Sheet. No password needed here. -->
+</div>
+<div id="game-container"></div>
+<div id="notebook">
+  <h3>Detective Notebook</h3>
+  <div id="notebook-content">No clues yet.</div>
+  <button onclick="toggleNotebook()">Close</button>
+</div>
+<script src="js/config.js"></script>
+<script src="data/questions.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
